@@ -1,6 +1,21 @@
 site_name: PhishDetect
 repo_url: https://github.com/phishdetect/phishdetect.github.io
 edit_uri: edit/main/docs/
-copyright: (c) 2020 Claudio Guarnieri
+copyright: Copyright (C) 2020 Claudio Guarnieri. The content of this website is licensed under CC-BY-NC-SA 4.0.
 site_description: PhishDetect documentation for administrators
-theme: readthedocs
+markdown_extensions:
+    - admonition
+    - codehilite
+theme:
+    name: material
+    features:
+        - tabs
+plugins:
+    - search
+nav:
+    - Run a PhishDetect Node:
+        - Why to run a node?: "node/why.md"
+        - Compile from sources: "node/compile.md"
+        - Install PhishDetect Node: "node/install.md"
+        - Configuration and Launch: "node/run.md"
+        - Configure Nginx: "node/nginx.md"
