@@ -10,19 +10,19 @@
       
       
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
-        <title>PhishDetect</title>
+        <title>Compile from sources - PhishDetect</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
         
       
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#compile-from-sources" class="md-skip">
           Skip to content
         </a>
       
@@ -71,7 +71,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="." title="PhishDetect" class="md-header-nav__button md-logo" aria-label="PhishDetect">
+    <a href="../.." title="PhishDetect" class="md-header-nav__button md-logo" aria-label="PhishDetect">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Welcome to MkDocs
+              Compile from sources
             
           </span>
         </div>
@@ -158,7 +158,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="PhishDetect" class="md-nav__button md-logo" aria-label="PhishDetect">
+    <a href="../.." title="PhishDetect" class="md-nav__button md-logo" aria-label="PhishDetect">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -186,10 +186,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       Run a PhishDetect Node
@@ -209,7 +211,7 @@
 
 
   <li class="md-nav__item">
-    <a href="node/why/" class="md-nav__link">
+    <a href="../why/" class="md-nav__link">
       Why to run a node?
     </a>
   </li>
@@ -219,11 +221,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="node/compile/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Compile from sources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Compile from sources
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-all-the-build-tools" class="md-nav__link">
+    Install all the build tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-yara" class="md-nav__link">
+    Install Yara
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-the-binary" class="md-nav__link">
+    Compile the binary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -233,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="node/install/" class="md-nav__link">
+    <a href="../install/" class="md-nav__link">
       Install PhishDetect Node
     </a>
   </li>
@@ -245,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="node/run/" class="md-nav__link">
+    <a href="../run/" class="md-nav__link">
       Configuration and Launch
     </a>
   </li>
@@ -257,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="node/nginx/" class="md-nav__link">
+    <a href="../nginx/" class="md-nav__link">
       Configure Nginx
     </a>
   </li>
@@ -292,15 +346,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#install-all-the-build-tools" class="md-nav__link">
+    Install all the build tools
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#install-yara" class="md-nav__link">
+    Install Yara
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-the-binary" class="md-nav__link">
+    Compile the binary
   </a>
   
 </li>
@@ -317,26 +378,57 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/phishdetect/phishdetect.github.io/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/phishdetect/phishdetect.github.io/edit/main/docs/node/compile.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">mkdocs.yml    # The configuration file.</span>
-<span class="err">docs/</span>
-<span class="err">    index.md  # The documentation homepage.</span>
-<span class="err">    ...       # Other markdown pages, images and other files.</span>
+                <h1 id="compile-from-sources">Compile from sources</h1>
+<p>This page contains instructions on how to compile PhishDetect Node from sources. Pre-compiled binaries for PhishDetect Node are already made available through <a href="https://github.com/phishdetect/phishdetect-node/releases">GitHub Releases</a>. If you wish to use our pre-compiled binaries you can skip this section and move to the <a href="../install/">installation instructions</a>.</p>
+<h2 id="install-all-the-build-tools">Install all the build tools</h2>
+<p>If you decided to build your own binary from the PhishDetect Node source code, you will need to have a working <strong>Go 1.14+</strong> environment configured. Please refer to the official documentation on how to install the most recent version of Go on your system of choice. If your system doesn't provide binary packages for recent versions of Go you might have to build Go from sources as well (in that case, you might want to consider using something like <a href="https://github.com/moovweb/gvm">GVM</a>). If so, keep in mind you might need some minimum requirements, such as at least 1GB of memory.</p>
+<p>It is critically important for the successful compilation of PhishDetect Node that you have <code>$GOPATH</code> properly set, and for the <code>$GOPATH/bin/</code> folder to be added to your <code>$PATH</code> environment varilable. You should configure this in your <code>.bashrc</code> or <code>.zshrc</code> file like following:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">$GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
 </code></pre></div>
+
+
+<p>Now you should install the required build tools. On Debian/Ubuntu systems you can do so like following:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt install pkg-config git make
+</code></pre></div>
+
+
+<h2 id="install-yara">Install Yara</h2>
+<p>In order to build a PhishDetect Node binary you will also need to install <a href="https://virustotal.github.io/yara/">Yara</a>. Although Yara might come packaged in your Linux distribution, it is preferable that you compile it from sources. You should refer to the official documentation for more details, but the installation process should be more or less the following:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get update -qq
+sudo apt-get install automake libtool make gcc pkg-config
+wget https://github.com/VirusTotal/yara/archive/v4.0.1.tar.gz
+tar -zxf v4.0.1.tar.gz
+<span class="nb">cd</span> yara-4.0.1
+<span class="s2">&quot;./bootstrap.sh&quot;</span>
+<span class="s2">&quot;./configure&quot;</span>
+make
+sudo make install
+sudo ldconfig
+</code></pre></div>
+
+
+<p>PhishDetect Node uses Yara to optionally scan suspicious pages with provided Yara rules. Despite this being an optional functionality, compiling PhishDetect Node from sources nevertheless requires libyara being installed on the build system.</p>
+<p>Ideally you should compile your PhishDetect Node with the same Yara version you will eventually install on the production server the Node will run on.</p>
+<h2 id="compile-the-binary">Compile the binary</h2>
+<p>At this point, you should have a working Go build system. You can now clone PhishDetect Node's git repository:</p>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/phishdetect/phishdetect-node.git
+</code></pre></div>
+
+
+<p>Move into the newly created folder:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> phishdetect-node
+</code></pre></div>
+
+
+<p>To build the binary you can simply launch the <code>make</code> command. This will attempt to download all required Go dependencies and additional tools, and finally compile PhishDetect Node.</p>
+<p>If it completed successfully, you should find a compiled binary called <code>phishdetect-node</code> inside the <code>build/</code> folder. This binary is all you need to run the PhishDetect Node service.</p>
+<p>You can now move on to the <a href="../install/">next section</a> for instructions on how to set PhishDetect Node up on your production server.</p>
                 
               
               
@@ -351,6 +443,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../why/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Why to run a node?
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../install/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Install PhishDetect Node
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -372,15 +499,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../..",
           features: ['tabs'],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
