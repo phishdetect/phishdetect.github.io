@@ -27,7 +27,10 @@ sudo ldconfig
 
 PhishDetect Node is capable of conducting dynamic analysis of suspicious URLs by opening them through a Google Chrome browser running in a disposable [Docker](https://www.docker.com/) container. In order to leverage this functionality, which can be [optionally disabled](run.md), you necessarily have to install Docker and PhishDetect's docker image.
 
-You should refer to Docker's [official documentation](https://docs.docker.com/engine/install/) for instructions on how to install it on your Linux distribution of choice. However **please note**: in order to minimize any potential security risks involved in exposing a Docker service, you should considering installing and launching Docker in [rootless mode](https://docs.docker.com/engine/security/rootless/). Through this configuration Docker is launched with regular user privileges instead of root, mitigating potential vulnerabilities in the daemon and the container runtime.
+You should refer to Docker's [official documentation](https://docs.docker.com/engine/install/) for instructions on how to install it on your Linux distribution of choice.
+
+!!! danger "Security note"
+    In order to minimize any potential security risks involved in exposing a Docker service, you should considering installing and launching Docker in [rootless mode](https://docs.docker.com/engine/security/rootless/). Through this configuration Docker is launched with regular user privileges instead of root, mitigating potential vulnerabilities in the daemon and the container runtime.
 
 Once you have your Docker daemon installed and running, you can proceed downloading PhishDetect's Docker image (make sure you are running this command from the same user you intend to launch PhishDetect Node's binary from):
 

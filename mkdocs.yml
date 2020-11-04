@@ -1,7 +1,7 @@
 site_name: PhishDetect Documentation
 repo_url: https://github.com/phishdetect/phishdetect.github.io
 edit_uri: edit/main/docs/
-copyright: Copyright (C) 2020 Claudio Guarnieri. The content of this website is licensed under CC-BY-NC-SA 4.0.
+copyright: Copyright &copy; 2020 Claudio Guarnieri.
 site_description: PhishDetect documentation for administrators
 markdown_extensions:
     - admonition
@@ -12,6 +12,7 @@ theme:
         - tabs
 plugins:
     - search
+    - mkdocstrings
 nav:
     - Run a PhishDetect Node:
         - Why to run a node?: "node/why.md"
@@ -22,5 +23,5 @@ nav:
     - PhishDetect API:
         - REST API: "api/rest.md"
         - Python API: "api/python.md"
-    - Threat Model:
+    - Privacy & Security:
         - Threat Model: "security/threat_model.md"
