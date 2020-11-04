@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PhishDetect documentation for administrators">
+        <meta name="description" content="PhishDetect Documentation for Administrators">
       
       
       
@@ -349,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/rest.md" class="md-nav__link">
+    <a href="../../api/rest/" class="md-nav__link">
       REST API
     </a>
   </li>
@@ -476,19 +476,17 @@
 <h2 id="install-all-the-build-tools">Install all the build tools</h2>
 <p>If you decided to build your own binary from the PhishDetect Node source code, you will need to have a working <strong>Go 1.14+</strong> environment configured. Please refer to the official documentation on how to install the most recent version of Go on your system of choice. If your system doesn't provide binary packages for recent versions of Go you might have to build Go from sources as well (in that case, you might want to consider using something like <a href="https://github.com/moovweb/gvm">GVM</a>). If so, keep in mind you might need some minimum requirements, such as at least 1GB of memory.</p>
 <p>It is critically important for the successful compilation of PhishDetect Node that you have <code>$GOPATH</code> properly set, and for the <code>$GOPATH/bin/</code> folder to be added to your <code>$PATH</code> environment varilable. You should configure this in your <code>.bashrc</code> or <code>.zshrc</code> file like following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">$GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">$GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
 </code></pre></div>
 
-
 <p>Now you should install the required build tools. On Debian/Ubuntu systems you can do so like following:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt install pkg-config git make
+<div class="highlight"><pre><span></span><code>sudo apt install pkg-config git make
 </code></pre></div>
-
 
 <h2 id="install-yara">Install Yara</h2>
 <p>In order to build a PhishDetect Node binary you will also need to install <a href="https://virustotal.github.io/yara/">Yara</a>. Although Yara might come packaged in your Linux distribution, it is preferable that you compile it from sources. You should refer to the official documentation for more details, but the installation process should be more or less the following:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get update -qq
+<div class="highlight"><pre><span></span><code>sudo apt-get update -qq
 sudo apt-get install automake libtool make gcc pkg-config
 wget https://github.com/VirusTotal/yara/archive/v4.0.1.tar.gz
 tar -zxf v4.0.1.tar.gz
@@ -500,19 +498,16 @@ sudo make install
 sudo ldconfig
 </code></pre></div>
 
-
 <p>PhishDetect Node uses Yara to optionally scan suspicious pages with provided Yara rules. Despite this being an optional functionality, compiling PhishDetect Node from sources nevertheless requires libyara being installed on the build system.</p>
 <p>Ideally you should compile your PhishDetect Node with the same Yara version you will eventually install on the production server the Node will run on.</p>
 <h2 id="compile-the-binary">Compile the binary</h2>
 <p>At this point, you should have a working Go build system. You can now clone PhishDetect Node's git repository:</p>
-<div class="codehilite"><pre><span></span><code>git clone https://github.com/phishdetect/phishdetect-node.git
+<div class="highlight"><pre><span></span><code>git clone https://github.com/phishdetect/phishdetect-node.git
 </code></pre></div>
-
 
 <p>Move into the newly created folder:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> phishdetect-node
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> phishdetect-node
 </code></pre></div>
-
 
 <p>To build the binary you can simply launch the <code>make</code> command. This will attempt to download all required Go dependencies and additional tools, and finally compile PhishDetect Node.</p>
 <p>If it completed successfully, you should find a compiled binary called <code>phishdetect-node</code> inside the <code>build/</code> folder. This binary is all you need to run the PhishDetect Node service.</p>

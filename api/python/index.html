@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PhishDetect documentation for administrators">
+        <meta name="description" content="PhishDetect Documentation for Administrators">
       
       
       
@@ -297,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../rest.md" class="md-nav__link">
+    <a href="../rest/" class="md-nav__link">
       REST API
     </a>
   </li>
@@ -911,12 +911,11 @@
                 
                 <h1 id="python-api">Python API</h1>
 <p>PhishDetect Node's REST API is also easily accessible through an MIT licensed <a href="https://github.com/phishdetect/phishdetect-python">Python 3 library</a> which can be simply installed (and updated) with:</p>
-<div class="codehilite"><pre><span></span><code>pip3 install -U phishdetect
+<div class="highlight"><pre><span></span><code>pip3 install -U phishdetect
 </code></pre></div>
 
-
 <p>Once installed, you can instantiate a connection to your PhishDetect Node like following:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 
 <span class="c1"># You have to specify the base host of your PhishDetect Node (including the</span>
 <span class="c1"># schema). The API key is optional, although it is required by some admin-level</span>
@@ -924,7 +923,6 @@
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;https://your-server.com&quot;</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>You can now use the <code>pd</code> object to access all PhishDetect Node's API routes. All available models are detailed in the reference below, and are accessible from an instantiated <code>PhishDetect</code> object. If you are looking for some practical examples, you can have a look at the collection of utilities built using this Python API available <a href="http://github.com/phishdetect/phishdetect-utils">here</a>.</p>
 <hr />
@@ -991,7 +989,7 @@ activate<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1075,7 +1073,7 @@ deactivate<span class="p">(</span><span class="bp">self</span><span class="p">,<
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1138,7 +1136,7 @@ get_active<span class="p">(</span><span class="bp">self</span><span class="p">)<
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1196,7 +1194,7 @@ get_pending<span class="p">(</span><span class="bp">self</span><span class="p">)
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1326,7 +1324,7 @@ which the Node can not automatically detect a type.</p>
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1442,7 +1440,7 @@ details<span class="p">(</span><span class="bp">self</span><span class="p">,</sp
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1526,7 +1524,7 @@ disable<span class="p">(</span><span class="bp">self</span><span class="p">,</sp
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1608,7 +1606,7 @@ enable<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1668,7 +1666,7 @@ fetch<span class="p">(</span><span class="bp">self</span><span class="p">)</span
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1727,7 +1725,7 @@ This API should be avoided unless strictly necessary.</p>
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1786,7 +1784,7 @@ fetch_recent<span class="p">(</span><span class="bp">self</span><span class="p">
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1844,7 +1842,7 @@ get_disabled<span class="p">(</span><span class="bp">self</span><span class="p">
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -1902,7 +1900,7 @@ get_pending<span class="p">(</span><span class="bp">self</span><span class="p">)
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2009,7 +2007,7 @@ fetch<span class="p">(</span><span class="bp">self</span><span class="p">,</span
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2118,7 +2116,7 @@ details<span class="p">(</span><span class="bp">self</span><span class="p">,</sp
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2218,7 +2216,7 @@ fetch<span class="p">(</span><span class="bp">self</span><span class="p">,</span
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2329,7 +2327,7 @@ domain<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2419,7 +2417,7 @@ html<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2510,7 +2508,7 @@ if PhishDetect's Docker image is properly installed.</p>
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2594,7 +2592,7 @@ url<span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<div class="codehilite">
+<div class="highlight">
 <pre><span></span><code><span class="kn">import</span> <span class="nn">phishdetect</span>
 <span class="n">pd</span> <span class="o">=</span> <span class="n">phishdetect</span><span class="o">.</span><span class="n">PhishDetect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"https://your-server.com"</span><span class="p">,</span>
                              <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">)</span>
@@ -2651,7 +2649,7 @@ url<span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../node/nginx/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../rest/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2660,7 +2658,7 @@ url<span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configure Nginx
+                REST API
               </div>
             </div>
           </a>

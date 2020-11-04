@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PhishDetect documentation for administrators">
+        <meta name="description" content="PhishDetect Documentation for Administrators">
       
       
       
@@ -342,7 +342,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/rest.md" class="md-nav__link">
+    <a href="../../api/rest/" class="md-nav__link">
       REST API
     </a>
   </li>
@@ -464,7 +464,7 @@
 <h2 id="nginx-configuration">Nginx Configuration</h2>
 <p>You can now create an Nginx configuration for your virtual host. You are going to configure it to proxy incoming requests to PhishDetect Node HTTP server by adding the line <code>proxy_pass http://127.0.0.1:7856;</code>. If you changed the host or the port number through <a href="../run/">command-line parameters</a> make sure you change the value of <code>proxy_pass</code> accordingly.</p>
 <p>You can use the following template and modify accordingly.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">server</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
     <span class="kn">server_tokens</span> <span class="no">off</span><span class="p">;</span>
 
@@ -548,13 +548,13 @@
           </a>
         
         
-          <a href="../../api/python/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../api/rest/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Python API
+                REST API
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

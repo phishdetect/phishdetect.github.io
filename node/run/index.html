@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PhishDetect documentation for administrators">
+        <meta name="description" content="PhishDetect Documentation for Administrators">
       
       
       
@@ -453,7 +453,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/rest.md" class="md-nav__link">
+    <a href="../../api/rest/" class="md-nav__link">
       REST API
     </a>
   </li>
@@ -681,50 +681,45 @@
                 
                 <h1 id="configuration-and-launch">Configuration and Launch</h1>
 <p>At this point you should have an executable binary for PhishDetect Node installed with all required dependencies. You can now check available command-line parameters using <code>--help</code>:</p>
-<div class="codehilite"><pre><span></span><code>./phishdetect-node --help
+<div class="highlight"><pre><span></span><code>./phishdetect-node --help
 </code></pre></div>
-
 
 <p>Which should result in the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Usage of phishdetect-node:</span>
-<span class="err">      --api-version string    Specify which Docker API version to use (default &quot;1.37&quot;)</span>
-<span class="err">      --brands string         Specify a folder containing YAML files with Brand specifications</span>
-<span class="err">      --contacts string       Specify a link to information or contacts details to be provided to your users</span>
-<span class="err">      --create-user           Create a new user</span>
-<span class="err">      --debug                 Enable debug logging</span>
-<span class="err">      --disable-analysis      Disable the ability to analyze links and pages</span>
-<span class="err">      --disable-api           Disable the API routes</span>
-<span class="err">      --disable-gui           Disable the Web GUI</span>
-<span class="err">      --disable-user-auth     Disable requirement of a valid user API key for all operations</span>
-<span class="err">      --host string           Specify the host to bind the service on (default &quot;127.0.0.1&quot;)</span>
-<span class="err">      --mongo string          Specify the mongodb url (default &quot;mongodb://localhost:27017&quot;)</span>
-<span class="err">      --port string           Specify which port number to bind the service on (default &quot;7856&quot;)</span>
-<span class="err">      --safebrowsing string   Specify a file path containing your Google SafeBrowsing API key (default disabled)</span>
-<span class="err">      --yara string           Specify a path to a file or folder contaning Yara rules</span>
+<div class="highlight"><pre><span></span><code>Usage of phishdetect-node:
+      --api-version string    Specify which Docker API version to use (default &quot;1.37&quot;)
+      --brands string         Specify a folder containing YAML files with Brand specifications
+      --contacts string       Specify a link to information or contacts details to be provided to your users
+      --create-user           Create a new user
+      --debug                 Enable debug logging
+      --disable-analysis      Disable the ability to analyze links and pages
+      --disable-api           Disable the API routes
+      --disable-gui           Disable the Web GUI
+      --disable-user-auth     Disable requirement of a valid user API key for all operations
+      --host string           Specify the host to bind the service on (default &quot;127.0.0.1&quot;)
+      --mongo string          Specify the mongodb url (default &quot;mongodb://localhost:27017&quot;)
+      --port string           Specify which port number to bind the service on (default &quot;7856&quot;)
+      --safebrowsing string   Specify a file path containing your Google SafeBrowsing API key (default disabled)
+      --yara string           Specify a path to a file or folder contaning Yara rules
 </code></pre></div>
-
 
 <h2 id="create-an-administrator">Create an Administrator</h2>
 <p>As a first step you should create your own Administrator account through the following command:</p>
-<div class="codehilite"><pre><span></span><code>./phishdetect-node --create-user
+<div class="highlight"><pre><span></span><code>./phishdetect-node --create-user
 </code></pre></div>
-
 
 <p>You will be offered a step-by-step process through which you will be able to select the account's trust level, specify a user name and an email address. At the end, you should be provided with a REST API key. Note down this key, you will need it later.</p>
 <h2 id="launch-phishdetect-node">Launch PhishDetect Node</h2>
 <p>Launching PhishDetect Node is as simple as launching this command:</p>
-<div class="codehilite"><pre><span></span><code>./phishdetect-node
+<div class="highlight"><pre><span></span><code>./phishdetect-node
 </code></pre></div>
-
 
 <p>You should see something similar to the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">INFO[2020-11-03 13:33:37 +0100] Enable API: true                             </span>
-<span class="err">INFO[2020-11-03 13:33:37 +0100] Enable GUI: true                             </span>
-<span class="err">INFO[2020-11-03 13:33:37 +0100] Enable Analysis: true                        </span>
-<span class="err">INFO[2020-11-03 13:33:37 +0100] Enforce User Auth: true                      </span>
-<span class="err">INFO[2020-11-03 13:33:37 +0100] Starting PhishDetect Node on 127.0.0.1:7856 and waiting for requests...</span>
+<div class="highlight"><pre><span></span><code>INFO[2020-11-03 13:33:37 +0100] Enable API: true                             
+INFO[2020-11-03 13:33:37 +0100] Enable GUI: true                             
+INFO[2020-11-03 13:33:37 +0100] Enable Analysis: true                        
+INFO[2020-11-03 13:33:37 +0100] Enforce User Auth: true                      
+INFO[2020-11-03 13:33:37 +0100] Starting PhishDetect Node on 127.0.0.1:7856 and waiting for requests...
 </code></pre></div>
-
 
 <p>Without specifying any additional command-line parameters, PhishDetect Node is launched with the following configuration:</p>
 <ol>
@@ -741,7 +736,7 @@
 <p>The default value is 1.37.</p>
 <h3 id="-brands"><code>--brands</code></h3>
 <p>Use this option to specify a path to a folder containing additional Brand definitions. These are used to extend the default <a href="https://godoc.org/github.com/phishdetect/phishdetect/brand#Brand">brands</a> embedded in the core library. You can use this to create custom Brand definitions for your own domain names. Custom brand defintions should come in the following YaML format and stored with <code>.yaml</code> or <code>.yml</code> file extensions:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">google</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">google</span>
 <span class="nt">original</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">google</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gmail</span>
@@ -754,7 +749,6 @@
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">goooogle</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">goolge</span>
 </code></pre></div>
-
 
 <p><code>name</code> should contain the name of the brand. <code>original</code> should contain words associated with the particular brand, including for example product names. <code>safelist</code> should contain a list of legitimate domain names associated with the brand. <code>suspicious</code> should contain a list of suspicious permutations of the original brand names which will be used to determine if a suspicious domain or URL is attempting to spoof this particular brand.</p>
 <h3 id="-contacts"><code>--contacts</code></h3>
