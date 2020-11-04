@@ -1,6 +1,16 @@
-Before configuring the web server, you need to have a TLS certificate ready for use. In most cases using [Let's Encrypt](https://letsencrypt.org) would be sufficient and, after having appropriately configured your DNS records to point to your server, you can use [certbot](https://certbot.eff.org) to generate a certificate.
+# Configure Nginx
 
-You can now create an Nginx configuration for your virtual host. You can use the following template and modify accordingly (particularly the domain name and the paths):
+While PhishDetect Node exposes an HTTP service of its own by default on `127.0.0.1:7856`, you should configure your webserver of choice to proxy requests on your production server. This section provides details on how to configure an [Nginx](https://nginx.org) webserver, but you can adapt this configuration to any other webserver such as [Apache](https://httpd.apache.org/).
+
+## Obtain a TLS Certificate
+
+Before configuring the web server, you need to have a TLS certificate ready for use. In most cases using [Let's Encrypt](https://letsencrypt.org) would be sufficient and, after having appropriately configured your DNS records to point to your server, you can use [certbot](https://certbot.eff.org) to generate a certificate. If you wish to do so, you can also acquire a TLS certificate from a trusted authority.
+
+## Nginx Configuration
+
+You can now create an Nginx configuration for your virtual host. You are going to configure it to proxy incoming requests to PhishDetect Node HTTP server by adding the line `proxy_pass http://127.0.0.1:7856;`. If you changed the host or the port number through [command-line parameters](run.md) make sure you change the value of `proxy_pass` accordingly.
+
+You can use the following template and modify accordingly.
 
 ```nginx
 server {
@@ -40,7 +50,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers "EECDH+AESGCM:AES256+EECDH";
     ssl_prefer_server_ciphers on;
     add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";

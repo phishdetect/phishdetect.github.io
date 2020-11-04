@@ -1,4 +1,4 @@
-site_name: PhishDetect
+site_name: PhishDetect Documentation
 repo_url: https://github.com/phishdetect/phishdetect.github.io
 edit_uri: edit/main/docs/
 copyright: Copyright (C) 2020 Claudio Guarnieri. The content of this website is licensed under CC-BY-NC-SA 4.0.
@@ -19,3 +19,8 @@ nav:
         - Install PhishDetect Node: "node/install.md"
         - Configuration and Launch: "node/run.md"
         - Configure Nginx: "node/nginx.md"
+    - PhishDetect API:
+        - REST API: "api/rest.md"
+        - Python API: "api/python.md"
+    - Threat Model:
+        - Threat Model: "security/threat_model.md"
