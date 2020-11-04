@@ -1,0 +1,793 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PhishDetect documentation for administrators">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Threat Model - PhishDetect Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#threat-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="PhishDetect Documentation" class="md-header-nav__button md-logo" aria-label="PhishDetect Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            PhishDetect Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Threat Model
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/phishdetect/phishdetect.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PhishDetect Documentation" class="md-nav__button md-logo" aria-label="PhishDetect Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PhishDetect Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/phishdetect/phishdetect.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Run a PhishDetect Node
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Run a PhishDetect Node" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Run a PhishDetect Node
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/why/" class="md-nav__link">
+      Why to run a node?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/compile/" class="md-nav__link">
+      Compile from sources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/install/" class="md-nav__link">
+      Install PhishDetect Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/run/" class="md-nav__link">
+      Configuration and Launch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/nginx/" class="md-nav__link">
+      Configure Nginx
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      PhishDetect API
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="PhishDetect API" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        PhishDetect API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/rest.md" class="md-nav__link">
+      REST API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/python.md" class="md-nav__link">
+      Python API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Threat Model
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Threat Model" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Threat Model
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Threat Model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Threat Model
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trust-levels" class="md-nav__link">
+    Trust Levels
+  </a>
+  
+    <nav class="md-nav" aria-label="Trust Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitter" class="md-nav__link">
+    Submitter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrator" class="md-nav__link">
+    Administrator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implications" class="md-nav__link">
+    Implications
+  </a>
+  
+    <nav class="md-nav" aria-label="Implications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-compromise-of-phishdetect-node-can-surrender" class="md-nav__link">
+    What a Compromise of PhishDetect Node Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-compromise-of-phishdetect-browser-extension-can-surrender" class="md-nav__link">
+    What a Compromise of PhishDetect Browser Extension Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-malicious-website-visited-by-phishdetect-browser-extension-can-surrender" class="md-nav__link">
+    What a Malicious Website Visited by PhishDetect Browser Extension Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-malicious-website-analyzed-by-phishdetect-node-can-surrender" class="md-nav__link">
+    What a Malicious Website Analyzed by PhishDetect Node Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-compromise-of-add-on-store-packages-can-surrender" class="md-nav__link">
+    What a Compromise of Add-On Store Packages Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-compromise-of-the-phishdetect-admin-utility-can-surrender" class="md-nav__link">
+    What the Compromise of the PhishDetect Admin Utility Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-generic-motivated-attacker-can-achieve" class="md-nav__link">
+    What a Generic Motivated Attacker Can Achieve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-local-network-attacker-can-achieve-against-user-submitter-or-administrator" class="md-nav__link">
+    What a Local Network Attacker Can Achieve Against User, Submitter or Administrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-nation-wide-network-adversary-can-achieve-against-user-submitter-or-administrator" class="md-nav__link">
+    What a Nation-wide Network Adversary Can Achieve Against User, Submitter or Administrator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trust-levels" class="md-nav__link">
+    Trust Levels
+  </a>
+  
+    <nav class="md-nav" aria-label="Trust Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitter" class="md-nav__link">
+    Submitter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrator" class="md-nav__link">
+    Administrator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implications" class="md-nav__link">
+    Implications
+  </a>
+  
+    <nav class="md-nav" aria-label="Implications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-compromise-of-phishdetect-node-can-surrender" class="md-nav__link">
+    What a Compromise of PhishDetect Node Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-compromise-of-phishdetect-browser-extension-can-surrender" class="md-nav__link">
+    What a Compromise of PhishDetect Browser Extension Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-malicious-website-visited-by-phishdetect-browser-extension-can-surrender" class="md-nav__link">
+    What a Malicious Website Visited by PhishDetect Browser Extension Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-malicious-website-analyzed-by-phishdetect-node-can-surrender" class="md-nav__link">
+    What a Malicious Website Analyzed by PhishDetect Node Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-compromise-of-add-on-store-packages-can-surrender" class="md-nav__link">
+    What a Compromise of Add-On Store Packages Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-compromise-of-the-phishdetect-admin-utility-can-surrender" class="md-nav__link">
+    What the Compromise of the PhishDetect Admin Utility Can Surrender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-generic-motivated-attacker-can-achieve" class="md-nav__link">
+    What a Generic Motivated Attacker Can Achieve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-local-network-attacker-can-achieve-against-user-submitter-or-administrator" class="md-nav__link">
+    What a Local Network Attacker Can Achieve Against User, Submitter or Administrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-nation-wide-network-adversary-can-achieve-against-user-submitter-or-administrator" class="md-nav__link">
+    What a Nation-wide Network Adversary Can Achieve Against User, Submitter or Administrator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/phishdetect/phishdetect.github.io/edit/main/docs/security/threat_model.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="threat-model">Threat Model</h1>
+<p>This document outlines the threat model for PhishDetect's architecture and its various software component. This document is inspired by <a href="https://docs.securedrop.org/en/stable/threat_model/threat_model.html">SecureDrop's threat model</a>. Because PhishDetect is under active development, this document is always a work in progress.</p>
+<h2 id="trust-levels">Trust Levels</h2>
+<p>PhishDetect Node currently supports three user trust levels <strong>user</strong>, <strong>submitter</strong> and <strong>admin</strong>, which are respectively assigned the numerical values <strong>0</strong>, <strong>1</strong> and <strong>2</strong>. These values are used to evaluate whether a client has sufficient permissions to access a given API route. For more information about PhishDetect Node's REST API and its routes' permission levels please read <a href="/api/rest.md">here</a>.</p>
+<p>In this section we explain the general capabilities we expect the three trust levels to access.</p>
+<h3 id="user">User</h3>
+<ul>
+<li>Fetch the list of indicators only in hashed form.</li>
+<li>Automatically submit "<em>alerts</em>" of suspicious events. Alerts should only contain metadata (email addresses, URLs) and no content (full-source emails, content at URL).</li>
+<li>Manually submit "<em>reports</em>" of suspicious emails and websites. Reports can contain content, typically only in the case of full-source emails.</li>
+<li>Submit requests of "<em>reviews</em>" of websites which might have been mistakenly blocked.</li>
+<li>Request the static analysis of a domain or a URL, if the PhishDetect Node enables analysis.</li>
+<li>Request the static analysis of HTML pages, if the PhishDetect Node enables analysis.</li>
+<li>Request the dynamic analysis of URLs, if the PhishDetect Node enables analysis.</li>
+</ul>
+<h3 id="submitter">Submitter</h3>
+<ul>
+<li>All of the above.</li>
+<li>Add new indicators to PhishDetect Node.</li>
+</ul>
+<h3 id="administrator">Administrator</h3>
+<ul>
+<li>All of the above.</li>
+<li>Enable or disable indicators on PhishDetect Node.</li>
+<li>Retrieve details of hashed indicators (including the clear-text original).</li>
+<li>Add, activate, and deactivate users of PhishDetect Node.</li>
+<li>Inspect "<em>alerts</em>" submitted to PhishDetect Node.</li>
+<li>Inspect "<em>reports</em>" submitted to PhishDetect Node.</li>
+<li>Inspect "<em>reviews</em>" requests submitted to PhishDetect Node.</li>
+</ul>
+<hr />
+<h2 id="implications">Implications</h2>
+<h3 id="what-a-compromise-of-phishdetect-node-can-surrender">What a Compromise of PhishDetect Node Can Surrender</h3>
+<ul>
+<li>If a PhishDetect Node is compromised, the attacker can inspect all registered users, retrieve their registration details including name, email address/contact details and API keys. The attacker could impersonate or deactivate existing users, and add an activate new users.</li>
+<li>Depending on the configuration of the webserver running PhishDetect Node, if compromised, the attacker could gain additional insights on users and any logged activity, including for example the IP address and the date and time of requests made to the server.</li>
+<li>If a PhishDetect Node is compromised, the attacker can inspect all indicators stored in clear-text and served to users.</li>
+<li>If a PhishDetect Node is compromised, the attacker can add new indicators for clients to download, and potentially cause (temporary) disruption against particular services.</li>
+<li>If a PhishDetect Node is compromised, the attacker can inspect all full-source emails and links reported by users.</li>
+<li>If a PhishDetect Node is compromised, the attacker can inspect all indicators users requested to be reviewed.</li>
+<li>If a PhishDetect Node is compromised, the attacker could find ways to deliver malformed data to cause, for example, Cross-Site Scripting or other injection attacks on PhishDetect Browser Extension users.</li>
+</ul>
+<h3 id="what-a-compromise-of-phishdetect-browser-extension-can-surrender">What a Compromise of PhishDetect Browser Extension Can Surrender</h3>
+<h3 id="what-a-malicious-website-visited-by-phishdetect-browser-extension-can-surrender">What a Malicious Website Visited by PhishDetect Browser Extension Can Surrender</h3>
+<h3 id="what-a-malicious-website-analyzed-by-phishdetect-node-can-surrender">What a Malicious Website Analyzed by PhishDetect Node Can Surrender</h3>
+<h3 id="what-a-compromise-of-add-on-store-packages-can-surrender">What a Compromise of Add-On Store Packages Can Surrender</h3>
+<ul>
+<li>Through the compromise of the account associated with Add-On Stores the attackers can upload malicious updates to PhishDetect Browser Extension which could result in the compromise of PhishDetect users.</li>
+</ul>
+<h3 id="what-the-compromise-of-the-phishdetect-admin-utility-can-surrender">What the Compromise of the PhishDetect Admin Utility Can Surrender</h3>
+<h3 id="what-a-generic-motivated-attacker-can-achieve">What a Generic Motivated Attacker Can Achieve</h3>
+<ul>
+<li>A Generic Motivated Attacker can attempt to launch a Distributed Denial of Service attack against the PhishDetect Node.</li>
+<li>If the PhishDetect Node offers analysis, and particularly without authentication of vetted users, a Generic Motivated Attacker can overload the PhishDetect Node by flooding it with requests to dynamically analyze a link.</li>
+<li>If the PhishDetect Node does not enforce authentication of vetted users, a Generic Motivated Attacker can pollute the database with bogus alerts, reports, and reviews requests.</li>
+<li>If the PhishDetect Node does not enforce authentication of vetted users, a Generic Motivated Attacker can retrieve the list of hashed indicators and attempt to enumerate which websites or email addresses are blocklisted by the Node operators.</li>
+<li>If the PhishDetect Node does not enforce authentication of vetted users, a Generic Motivated Attacker can attempt to submit specially crafted "alerts", "reports" and "reviews" to execute NoSQL injections.</li>
+<li>If the PhishDetect Node does not enforce authentication of vetted users, a Generic Motivated Attacker can attempt to submit specially crafted "alerts", "reports" and "reviews" to execute Cross-Site Scripting on a PhishDetect Admin interface.</li>
+</ul>
+<h3 id="what-a-local-network-attacker-can-achieve-against-user-submitter-or-administrator">What a Local Network Attacker Can Achieve Against User, Submitter or Administrator</h3>
+<ul>
+<li>A Local Network Attacker can observe if a User, Submitter or Administrator is accessing a particular PhishDetect Node.</li>
+<li>A Local Network Attacker can prevent a User, Submitter or Administrator from accessing a PhishDetect Node.</li>
+</ul>
+<h3 id="what-a-nation-wide-network-adversary-can-achieve-against-user-submitter-or-administrator">What a Nation-wide Network Adversary Can Achieve Against User, Submitter or Administrator</h3>
+<ul>
+<li>A Nation-wide Network Adversary can observe if any User, Submitter or Administrator in a country is accessing a particular PhishDetect Node through DNS or IP protocols inspection.</li>
+<li>A Nation-wide Network Adversary can block access to a PhishDetect Node to any or all Users, Submitters or Administrators.</li>
+<li>A Nation-wide Network Adversary capable of forging valid TLS certificates might be able to intercept any transmission from Users, Submitters or Administrators to a PhishDetect Node.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../node/nginx/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configure Nginx
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (C) 2020 Claudio Guarnieri. The content of this website is licensed under CC-BY-NC-SA 4.0.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
