@@ -375,7 +375,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/python.md" class="md-nav__link">
+    <a href="../../api/python/" class="md-nav__link">
       Python API
     </a>
   </li>
@@ -396,13 +396,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Threat Model
+      Privacy & Security
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Threat Model" data-md-level="1">
+    <nav class="md-nav" aria-label="Privacy & Security" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        Threat Model
+        Privacy & Security
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -520,7 +520,11 @@ sudo ldconfig
 
 <h2 id="install-docker">Install Docker</h2>
 <p>PhishDetect Node is capable of conducting dynamic analysis of suspicious URLs by opening them through a Google Chrome browser running in a disposable <a href="https://www.docker.com/">Docker</a> container. In order to leverage this functionality, which can be <a href="../run/">optionally disabled</a>, you necessarily have to install Docker and PhishDetect's docker image.</p>
-<p>You should refer to Docker's <a href="https://docs.docker.com/engine/install/">official documentation</a> for instructions on how to install it on your Linux distribution of choice. However <strong>please note</strong>: in order to minimize any potential security risks involved in exposing a Docker service, you should considering installing and launching Docker in <a href="https://docs.docker.com/engine/security/rootless/">rootless mode</a>. Through this configuration Docker is launched with regular user privileges instead of root, mitigating potential vulnerabilities in the daemon and the container runtime.</p>
+<p>You should refer to Docker's <a href="https://docs.docker.com/engine/install/">official documentation</a> for instructions on how to install it on your Linux distribution of choice.</p>
+<div class="admonition danger">
+<p class="admonition-title">Security note</p>
+<p>In order to minimize any potential security risks involved in exposing a Docker service, you should considering installing and launching Docker in <a href="https://docs.docker.com/engine/security/rootless/">rootless mode</a>. Through this configuration Docker is launched with regular user privileges instead of root, mitigating potential vulnerabilities in the daemon and the container runtime.</p>
+</div>
 <p>Once you have your Docker daemon installed and running, you can proceed downloading PhishDetect's Docker image (make sure you are running this command from the same user you intend to launch PhishDetect Node's binary from):</p>
 <div class="codehilite"><pre><span></span><code>docker pull phishdetect/phishdetect
 </code></pre></div>
@@ -602,7 +606,7 @@ sudo ldconfig
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright (C) 2020 Claudio Guarnieri. The content of this website is licensed under CC-BY-NC-SA 4.0.
+            Copyright &copy; 2020 Claudio Guarnieri.
           </div>
         
         Made with
