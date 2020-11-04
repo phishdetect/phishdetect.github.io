@@ -2,10 +2,13 @@ site_name: PhishDetect Documentation
 repo_url: https://github.com/phishdetect/phishdetect.github.io
 edit_uri: edit/main/docs/
 copyright: Copyright &copy; 2020 Claudio Guarnieri.
-site_description: PhishDetect documentation for administrators
+site_description: PhishDetect Documentation for Administrators
 markdown_extensions:
     - admonition
-    - codehilite
+    - pymdownx.superfences
+    - pymdownx.inlinehilite
+    - pymdownx.highlight:
+        use_pygments: true
 theme:
     name: material
     features:
