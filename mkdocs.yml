@@ -1,10 +1,14 @@
 site_name: PhishDetect Documentation
 repo_url: https://github.com/phishdetect/phishdetect.github.io
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2020 Claudio Guarnieri.
+copyright: Copyright &copy; 2020 Claudio Guarnieri
 site_description: PhishDetect Documentation for Administrators
 markdown_extensions:
+    - attr_list
     - admonition
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.superfences
     - pymdownx.inlinehilite
     - pymdownx.highlight:
@@ -16,7 +20,17 @@ theme:
 plugins:
     - search
     - mkdocstrings
+extra:
+    social:
+        - icon: fontawesome/solid/home
+          link: https://phishdetect.io
+        - icon: fontawesome/brands/github
+          link: https://github.com/phishdetect
 nav:
+    - Welcome: "index.md"
+    - About PhishDetect:
+        - Concept & Design Principles: "about/concept.md"
+        - Components: "about/components.md"
     - Run a PhishDetect Node:
         - Why to run a node?: "node/why.md"
         - Compile from sources: "node/compile.md"
