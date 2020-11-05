@@ -15,7 +15,7 @@
     
     
       
-        <title>Configuration and Launch - PhishDetect Documentation</title>
+        <title>Concept & Design Principles - PhishDetect Documentation</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration-and-launch" class="md-skip">
+        <a href="#concept-design-principles" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Configuration and Launch
+              Concept & Design Principles
             
           </span>
         </div>
@@ -198,10 +198,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       About PhishDetect
@@ -219,11 +221,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../about/concept/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Concept & Design Principles
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Concept & Design Principles
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#designed-for-at-risk-end-users" class="md-nav__link">
+    Designed for At-Risk End-Users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consent-based-information-sharing" class="md-nav__link">
+    Consent-based Information Sharing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collective-participation-equals-collective-protection" class="md-nav__link">
+    Collective Participation Equals Collective Protection
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -233,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../about/components/" class="md-nav__link">
+    <a href="../components/" class="md-nav__link">
       Components
     </a>
   </li>
@@ -248,12 +302,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Run a PhishDetect Node
@@ -273,7 +325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../why/" class="md-nav__link">
+    <a href="../../node/why/" class="md-nav__link">
       Why to run a node?
     </a>
   </li>
@@ -285,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../compile/" class="md-nav__link">
+    <a href="../../node/compile/" class="md-nav__link">
       Compile from sources
     </a>
   </li>
@@ -297,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../install/" class="md-nav__link">
+    <a href="../../node/install/" class="md-nav__link">
       Install PhishDetect Node
     </a>
   </li>
@@ -307,167 +359,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Configuration and Launch
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../node/run/" class="md-nav__link">
       Configuration and Launch
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-an-administrator" class="md-nav__link">
-    Create an Administrator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launch-phishdetect-node" class="md-nav__link">
-    Launch PhishDetect Node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-parameters" class="md-nav__link">
-    Command-line Parameters
-  </a>
-  
-    <nav class="md-nav" aria-label="Command-line Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-api-version" class="md-nav__link">
-    --api-version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-brands" class="md-nav__link">
-    --brands
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-contacts" class="md-nav__link">
-    --contacts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-create-user" class="md-nav__link">
-    --create-user
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-debug" class="md-nav__link">
-    --debug
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-analysis" class="md-nav__link">
-    --disable-analysis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-api" class="md-nav__link">
-    --disable-api
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-gui" class="md-nav__link">
-    --disable-gui
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-user-auth" class="md-nav__link">
-    --disable-user-auth
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-host" class="md-nav__link">
-    --host
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-mongo" class="md-nav__link">
-    --mongo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-port" class="md-nav__link">
-    --port
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-safebrowsing" class="md-nav__link">
-    --safebrowsing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-yara" class="md-nav__link">
-    --yara
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -477,7 +373,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../nginx/" class="md-nav__link">
+    <a href="../../node/nginx/" class="md-nav__link">
       Configure Nginx
     </a>
   </li>
@@ -600,127 +496,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-an-administrator" class="md-nav__link">
-    Create an Administrator
+  <a href="#designed-for-at-risk-end-users" class="md-nav__link">
+    Designed for At-Risk End-Users
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#launch-phishdetect-node" class="md-nav__link">
-    Launch PhishDetect Node
+  <a href="#consent-based-information-sharing" class="md-nav__link">
+    Consent-based Information Sharing
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#command-line-parameters" class="md-nav__link">
-    Command-line Parameters
+  <a href="#collective-participation-equals-collective-protection" class="md-nav__link">
+    Collective Participation Equals Collective Protection
   </a>
-  
-    <nav class="md-nav" aria-label="Command-line Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-api-version" class="md-nav__link">
-    --api-version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-brands" class="md-nav__link">
-    --brands
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-contacts" class="md-nav__link">
-    --contacts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-create-user" class="md-nav__link">
-    --create-user
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-debug" class="md-nav__link">
-    --debug
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-analysis" class="md-nav__link">
-    --disable-analysis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-api" class="md-nav__link">
-    --disable-api
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-gui" class="md-nav__link">
-    --disable-gui
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-disable-user-auth" class="md-nav__link">
-    --disable-user-auth
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-host" class="md-nav__link">
-    --host
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-mongo" class="md-nav__link">
-    --mongo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-port" class="md-nav__link">
-    --port
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-safebrowsing" class="md-nav__link">
-    --safebrowsing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-yara" class="md-nav__link">
-    --yara
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -736,111 +528,24 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/phishdetect/phishdetect.github.io/edit/main/docs/node/run.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/phishdetect/phishdetect.github.io/edit/main/docs/about/concept.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="configuration-and-launch">Configuration and Launch</h1>
-<p>At this point you should have an executable binary for PhishDetect Node installed with all required dependencies. You can now check available command-line parameters using <code>--help</code>:</p>
-<div class="highlight"><pre><span></span><code>./phishdetect-node --help
-</code></pre></div>
-
-<p>Which should result in the following:</p>
-<div class="highlight"><pre><span></span><code>Usage of phishdetect-node:
-      --api-version string    Specify which Docker API version to use (default &quot;1.37&quot;)
-      --brands string         Specify a folder containing YAML files with Brand specifications
-      --contacts string       Specify a link to information or contacts details to be provided to your users
-      --create-user           Create a new user
-      --debug                 Enable debug logging
-      --disable-analysis      Disable the ability to analyze links and pages
-      --disable-api           Disable the API routes
-      --disable-gui           Disable the Web GUI
-      --disable-user-auth     Disable requirement of a valid user API key for all operations
-      --host string           Specify the host to bind the service on (default &quot;127.0.0.1&quot;)
-      --mongo string          Specify the mongodb url (default &quot;mongodb://localhost:27017&quot;)
-      --port string           Specify which port number to bind the service on (default &quot;7856&quot;)
-      --safebrowsing string   Specify a file path containing your Google SafeBrowsing API key (default disabled)
-      --yara string           Specify a path to a file or folder contaning Yara rules
-</code></pre></div>
-
-<h2 id="create-an-administrator">Create an Administrator</h2>
-<p>As a first step you should create your own Administrator account through the following command:</p>
-<div class="highlight"><pre><span></span><code>./phishdetect-node --create-user
-</code></pre></div>
-
-<p>You will be offered a step-by-step process through which you will be able to select the account's trust level, specify a user name and an email address. At the end, you should be provided with a REST API key. Note down this key, you will need it later.</p>
-<h2 id="launch-phishdetect-node">Launch PhishDetect Node</h2>
-<p>Launching PhishDetect Node is as simple as launching this command:</p>
-<div class="highlight"><pre><span></span><code>./phishdetect-node
-</code></pre></div>
-
-<p>You should see something similar to the following:</p>
-<div class="highlight"><pre><span></span><code>INFO[2020-11-03 13:33:37 +0100] Enable API: true                             
-INFO[2020-11-03 13:33:37 +0100] Enable GUI: true                             
-INFO[2020-11-03 13:33:37 +0100] Enable Analysis: true                        
-INFO[2020-11-03 13:33:37 +0100] Enforce User Auth: true                      
-INFO[2020-11-03 13:33:37 +0100] Starting PhishDetect Node on 127.0.0.1:7856 and waiting for requests...
-</code></pre></div>
-
-<p>Without specifying any additional command-line parameters, PhishDetect Node is launched with the following configuration:</p>
-<ol>
-<li>Enable REST API routes.</li>
-<li>Enable GUI pages such as registration form, and link analysis.</li>
-<li>Enable dynamic analysis through the Dockerized Chrome browsers.</li>
-<li>Enforce user authentication, and require new users to register and be activated.</li>
-<li>Launch PhishDetect Node on host <code>127.0.0.1</code> and port <code>7856</code>.</li>
-</ol>
-<p>All of these settings can be changed through the appropriate command-line parameters.</p>
-<h2 id="command-line-parameters">Command-line Parameters</h2>
-<h3 id="-api-version"><code>--api-version</code></h3>
-<p>Use this option to specify which API version for Docker you intend to use. In most cases you should be able to just ignore this option.</p>
-<p>The default value is 1.37.</p>
-<h3 id="-brands"><code>--brands</code></h3>
-<p>Use this option to specify a path to a folder containing additional Brand definitions. These are used to extend the default <a href="https://godoc.org/github.com/phishdetect/phishdetect/brand#Brand">brands</a> embedded in the core library. You can use this to create custom Brand definitions for your own domain names. Custom brand defintions should come in the following YaML format and stored with <code>.yaml</code> or <code>.yml</code> file extensions:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">google</span>
-<span class="nt">original</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">google</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gmail</span>
-<span class="nt">safelist</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">google.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">google.de</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">google.it</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">google.fr</span>
-<span class="nt">suspicious</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">goooogle</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">goolge</span>
-</code></pre></div>
-
-<p><code>name</code> should contain the name of the brand. <code>original</code> should contain words associated with the particular brand, including for example product names. <code>safelist</code> should contain a list of legitimate domain names associated with the brand. <code>suspicious</code> should contain a list of suspicious permutations of the original brand names which will be used to determine if a suspicious domain or URL is attempting to spoof this particular brand.</p>
-<h3 id="-contacts"><code>--contacts</code></h3>
-<p>Use this option to specify a link to a separate webpage that provides additional information on your PhishDetect Node and perhaps your contact details.</p>
-<h3 id="-create-user"><code>--create-user</code></h3>
-<p>Use this command-line parameter to follow a step-by-step process to create a new user account and obtain its API key.</p>
-<h3 id="-debug"><code>--debug</code></h3>
-<p>Use this option to enable debug-level logging. Beware that it is very verbose, so you might not want to turn this on in production.</p>
-<h3 id="-disable-analysis"><code>--disable-analysis</code></h3>
-<p>Use this option to disable the ability to perform dynamic analysis of suspicious links and web pages. This is the functionality that will make use of the Docker image. Using this option will turn off this functionality both on the Web GUI and on the REST API.</p>
-<h3 id="-disable-api"><code>--disable-api</code></h3>
-<p>Use this option to disable the REST API service. The REST API is used by the clients, such as the <a href="https://github.com/phishdetect/phishdetect-extension">browser extension</a> to download lists of malicious indicators as well as to send alerts of suspected events to the PhishDetect Node administrator.</p>
-<h3 id="-disable-gui"><code>--disable-gui</code></h3>
-<p>Use this option to disable the Web GUI component of the service. The GUI is used by some clients, such as the browser extension, to request the dynamic analysis of suspicious links and pages.</p>
-<h3 id="-disable-user-auth"><code>--disable-user-auth</code></h3>
-<p>Use this option to disable the enforcement of user authentication. Users will be able to configure their clients, such as the browser extension, to use your Node without having to register and without having to provide a valid API key.</p>
-<h3 id="-host"><code>--host</code></h3>
-<p>Specify the host to bind PhishDetect Node on.</p>
-<p>The default value is <code>127.0.0.1</code>.</p>
-<h3 id="-mongo"><code>--mongo</code></h3>
-<p>Specify a custom connection string to MongoDB.</p>
-<p>The default value is <code>mongodb://localhost:27017</code>.</p>
-<h3 id="-port"><code>--port</code></h3>
-<p>Use this option to use a custom port number for the web server.</p>
-<p>The default value is <code>7856</code>.</p>
-<h3 id="-safebrowsing"><code>--safebrowsing</code></h3>
-<p>Use this option to provide your private API key for the Google Safebrowsing API.</p>
-<p><em>This functionality is currently experimental.</em></p>
-<h3 id="-yara"><code>--yara</code></h3>
-<p>Use this option to specify a path to a file or a folder containing Yara rules. Upon launch, PhishDetect Node will find and load all Yara rules contained at this path and subsequently use them for the analysis of suspicious HTML pages and for the dynamic analysis of suspicious links.</p>
+                <h1 id="concept-design-principles">Concept &amp; Design Principles</h1>
+<p>PhishDetect is a suite of libraries and tools to assist with the reporting, detection and prevention of phishing and other forms of digital attacks. As mentioned, PhishDetect was conceived to fill gaps in civil society's cyber security ecosystem, and aiding the efforts of non-profits supporting human rights defenders and journalists. The lack of availability of security products and services to this segment of society, which is nevertheless highly targeted by cyberattacks, demands reinventing some wheels in order to better cater to the highly underfunded, diverse and distributed technological ecosystem typical of civil society.</p>
+<p>While PhishDetect developers do not discourage the adoption of our software for other use-case scenarios, the development continues in respect of the following concepts and design principles that went into PhishDetect's creation.</p>
+<h2 id="designed-for-at-risk-end-users">Designed for At-Risk End-Users</h2>
+<p>PhishDetect's primary goal is to facilitate the adoption of security protocols by at-risk end-users, who often work independently, with personal hardware and software, and without the support of a dedicated IT department.</p>
+<h2 id="consent-based-information-sharing">Consent-based Information Sharing</h2>
+<p>While granting remote control of accounts or devices to PhishDetect operators would be much simpler and possibly enable more effective monitoring for any suspicious activity, it would be ethically questionable and constitute a liability. We do not want to centralise excessive powers in the hands of PhishDetect operators, especially if that could lead to further compromise of at-risk users. Particularly because of heightened risks, PhishDetect's end-users should retain as much control as possible.</p>
+<p>Therefore PhishDetect, and any of its official client applications, shall never grant developers or operators access to any user's device or account.</p>
+<p>Any automated alerts from official PhishDetect client applications (such as the <a href="https://github.com/phishdetect/phishdetect-extension">Browser Extension</a>) can only contain metadata, and not the content of any communication (for example the content of emails or web pages), and only be pertinent to known-malicious activity. Additionally, users should be allowed to optionally disable all automated alerts, if they decide to do so.</p>
+<p>Any reporting of communications content, such as full-source emails, or of undetected activity, such as URLs the user suspects to be malicious, can only happen with the explicit consent and manual approval of the end-user.</p>
+<h2 id="collective-participation-equals-collective-protection">Collective Participation Equals Collective Protection</h2>
+<p>End-users shouldn't only be passive recipient of a service, but they should be incentivized to actively engage. A core part of PhishDetect's design is to simplify users' reporting of suspicious emails and links. Active users' participation in the detection and reporting of suspected attacks results in the collective protection of all others.</p>
+<p>Through PhishDetect, a targeted user can report suspected malicious emails or links, operators can verify them and immediately issue new indicators of compromise, which all other users will shortly after automatically fetch. In a matter of minutes, a single PhishDetect user contributes protecting everyone else. Collective participation therefore equals collective protection.</p>
                 
               
               
@@ -859,7 +564,7 @@ INFO[2020-11-03 13:33:37 +0100] Starting PhishDetect Node on 127.0.0.1:7856 and 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../install/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -868,19 +573,19 @@ INFO[2020-11-03 13:33:37 +0100] Starting PhishDetect Node on 127.0.0.1:7856 and 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Install PhishDetect Node
+                Welcome
               </div>
             </div>
           </a>
         
         
-          <a href="../nginx/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../components/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Configure Nginx
+                Components
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
